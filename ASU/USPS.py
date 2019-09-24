@@ -1,6 +1,4 @@
 import scipy.io
-import numpy as np
-import sys
 
 mat = scipy.io.loadmat('/Users/shenzixiao/Dropbox/DATA/ASU/'
                        'HandWrittenImageData/USPS.mat')
