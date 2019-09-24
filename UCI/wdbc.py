@@ -1,5 +1,6 @@
 from sklearn.datasets import load_breast_cancer
 wdbc = load_breast_cancer()
 
-data = wdbc.data
-target = wdbc.target
+X = wdbc.data
+Y = wdbc.target
+n_samples, num_F = X.shape
