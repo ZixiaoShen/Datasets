@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 
 file_path = '/Users/shenzixiao/Dropbox/DATA/UCI/Parkinsons/parkinsons.csv'
+
 data = pd.read_csv(file_path)
 parkinsons = data.values
 
