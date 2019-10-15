@@ -3,15 +3,15 @@ import numpy as np
 import io
 import requests
 
-file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/Dermatology/dermatology.csv"
+file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/Dermatology/dermatology.data"
 
-# s = requests.get(file_url).content
-df = pd.read_csv(file_url, header=None)
+s = requests.get(file_url).content
+df = pd.read_csv(io.StringIO(s.decode('utf-8')), header=None)
 
-data = df.values
-data = data.replace(to_replace="?", value=np.nan)
+data = df.replace(to_replace="?", value=np.nan)
 data = data.dropna(how='any')
 dermatology = data.values
+dermatology = dermatology.astype('int')
 
 X = dermatology[:, 0:34]
 X = X.astype('float')
