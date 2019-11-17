@@ -3,20 +3,20 @@ import io
 import requests
 
 
-def page_blocks():
-    file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/F7_Appendicitis/Appendicitis.csv"
-    s = requests.get(file_url).content
-    df = pd.read_csv(io.StringIO(s.decode('utf-8')), header=None)
+# def page_blocks():
+file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/F10_page_blocks/page_blocks.csv"
+s = requests.get(file_url).content
+df = pd.read_csv(io.StringIO(s.decode('utf-8')), header=None)
 
-    data = df.values
-    x = data[:, 0:7]
-    x = x.astype('float')
-    y = data[:, 7].astype('int')
-    return x, y
+data = df.values
+# x = data[:, 0:9]
+# x = x.astype('float')
+# y = data[:, 9].astype('int')
+    # return x, y
 
-
-if __name__ == '__main__':
-    X, Y = page_blocks()
-    n_samples, n_features = X.shape
-    print(n_samples)
-    print(n_features)
+#
+# if __name__ == '__main__':
+#     X, Y = page_blocks()
+#     n_samples, n_features = X.shape
+#     print(n_samples)
+#     print(n_features)
