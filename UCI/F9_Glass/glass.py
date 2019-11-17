@@ -5,7 +5,7 @@ import requests
 
 
 def glass():
-    file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/Glass/glass.data"
+    file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/F9_Glass/glass.data"
 
     s = requests.get(file_url).content
     df = pd.read_csv(io.StringIO(s.decode('utf-8')), header=None)
