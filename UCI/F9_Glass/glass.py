@@ -9,7 +9,6 @@ def glass():
 
     s = requests.get(file_url).content
     df = pd.read_csv(io.StringIO(s.decode('utf-8')), header=None)
-
     df = df.drop(columns=0)
     x_df = df.drop(columns=10)
     y_df = df[10]
