@@ -5,6 +5,7 @@ import requests
 
 # def page_blocks():
 file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/F10_page_blocks/page_blocks.csv"
+# file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/F10_page_blocks/page-blocks.data"
 s = requests.get(file_url).content
 df = pd.read_csv(io.StringIO(s.decode('utf-8')), header=None)
 
