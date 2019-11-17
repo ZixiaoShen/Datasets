@@ -4,23 +4,24 @@ import io
 import requests
 
 
-# def glass():
-file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/F8_Yeast/yeast.data"
+def yeast():
+    file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/F8_Yeast/yeast.csv"
 
-s = requests.get(file_url).content
-df = pd.read_csv(io.StringIO(s.decode('utf-8')), header=None)
+    s = requests.get(file_url).content
+    df = pd.read_csv(io.StringIO(s.decode('utf-8')), header=None)
+    df = df.drop(columns=0)
+    x_df = df.drop(columns=9)
+    y_df = df[9]
+    x = np.array(x_df)
+    class_mapping = {'MIT': 0, 'NUC': 1, 'CYT': 2, 'ME1': 3, 'EXC': 4,
+                     'ME2': 5, 'ME3': 6, 'VAC': 7, 'POX': 8, 'ERL': 9}
+    y = y_df.map(class_mapping)
+    y = np.array(y)
+    return x, y
 
-    # df = df.drop(columns=0)
-    # x_df = df.drop(columns=10)
-    # y_df = df[10]
-    #
-    # x = np.array(x_df)
-    # y = np.array(y_df)
-    # # return x, y
 
-
-# if __name__ == '__main__':
-#     X, Y = glass()
-#     n_samples, n_features = X.shape
-#     print(n_samples)
-#     print(n_features)
+if __name__ == '__main__':
+    X, Y = yeast()
+    n_samples, n_features = X.shape
+    print(n_samples)
+    print(n_features)

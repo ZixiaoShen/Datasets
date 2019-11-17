@@ -5,7 +5,7 @@ import requests
 
 
 def ionosphere():
-    file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/Ionosphere/ionosphere.data"
+    file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/F34_Ionosphere/ionosphere.data"
     s = requests.get(file_url).content
     df = pd.read_csv(io.StringIO(s.decode('utf-8')), header=None)
     x_df = df.drop(columns=34)
