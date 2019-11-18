@@ -4,14 +4,14 @@ import io
 import requests
 
 
-def ionosphere():
-    file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/F34_Ionosphere/ionosphere.data"
+def sonar():
+    file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/F60_Sonar/sonar.csv"
     s = requests.get(file_url).content
     df = pd.read_csv(io.StringIO(s.decode('utf-8')), header=None)
-    x_df = df.drop(columns=34)
-    y_df = df[34]
+    x_df = df.drop(columns=60)
+    y_df = df[60]
 
-    class_mapping = {'g': 1, 'b': 0}
+    class_mapping = {'R': 0, 'M': 1}
     y = y_df.map(class_mapping)
     x = np.array(x_df)
     y = np.array(y)
@@ -19,7 +19,7 @@ def ionosphere():
 
 
 if __name__ == '__main__':
-    X, Y = ionosphere()
+    X, Y = sonar()
     n_samples, n_features = X.shape
     print(n_samples)
     print(n_features)
