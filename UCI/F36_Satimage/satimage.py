@@ -4,14 +4,14 @@ import requests
 
 
 def satimage():
-    file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/F7_Appendicitis/Appendicitis.csv"
+    file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/F36_Satimage/Satimage.csv"
     s = requests.get(file_url).content
     df = pd.read_csv(io.StringIO(s.decode('utf-8')), header=None)
 
     data = df.values
-    x = data[:, 0:7]
-    x = x.astype('float')
-    y = data[:, 7].astype('int')
+    x = data[:, 0:36]
+    x = x.astype('int')
+    y = data[:, 36].astype('int')
     return x, y
 
 
