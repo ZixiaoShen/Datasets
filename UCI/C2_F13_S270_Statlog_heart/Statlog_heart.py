@@ -5,7 +5,8 @@ import requests
 
 
 def statlog_heart():
-    file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/F13_Statlog_heart/Statlog_heart.csv"
+    file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/" \
+               "C2_F13_S270_Statlog_heart/Statlog_heart.csv"
 
     s = requests.get(file_url).content
     df = pd.read_csv(io.StringIO(s.decode('utf-8')), header=None)

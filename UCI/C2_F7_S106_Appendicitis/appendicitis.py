@@ -4,7 +4,8 @@ import requests
 
 
 def appendicitis():
-    file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/F7_Appendicitis/Appendicitis.csv"
+    file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/" \
+               "C2_F7_S106_Appendicitis/Appendicitis.csv"
     s = requests.get(file_url).content
     df = pd.read_csv(io.StringIO(s.decode('utf-8')), header=None)
 
