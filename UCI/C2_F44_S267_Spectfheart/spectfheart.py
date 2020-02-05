@@ -18,5 +18,7 @@ def spectfheart():
 if __name__ == '__main__':
     X, Y = spectfheart()
     n_samples, n_features = X.shape
-    print(n_samples)
-    print(n_features)
+    n_class = len(set(Y))
+    print("Number of Samples:", n_samples)
+    print("Number of Features:", n_features)
+    print("Number of Classes:", n_class)
