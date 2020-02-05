@@ -5,7 +5,8 @@ import requests
 
 
 def parkinsons():
-    file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/F22_Parkinsons/parkinsons.csv"
+    file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/" \
+               "C2_F22_S195_Parkinsons/parkinsons.csv"
     s = requests.get(file_url).content
     df = pd.read_csv(io.StringIO(s.decode('utf-8')), header=None)
 

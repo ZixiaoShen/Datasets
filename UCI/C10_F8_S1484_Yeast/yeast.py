@@ -5,8 +5,8 @@ import requests
 
 
 def yeast():
-    file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/F8_Yeast/yeast.csv"
-
+    file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/" \
+               "C10_F8_S1484_Yeast/yeast.csv"
     s = requests.get(file_url).content
     df = pd.read_csv(io.StringIO(s.decode('utf-8')), header=None)
     df = df.drop(columns=0)

@@ -4,7 +4,8 @@ import requests
 
 
 def satimage():
-    file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/F36_Satimage/Satimage.csv"
+    file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/" \
+               "C6_F36_S6435_Satimage/Satimage.csv"
     s = requests.get(file_url).content
     df = pd.read_csv(io.StringIO(s.decode('utf-8')), header=None)
 

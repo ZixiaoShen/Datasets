@@ -5,7 +5,8 @@ import requests
 
 
 def dermatology():
-    file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/F34_Dermatology/dermatology.data"
+    file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/" \
+               "C6_F34_S358_Dermatology/dermatology.data"
     s = requests.get(file_url).content
     df = pd.read_csv(io.StringIO(s.decode('utf-8')), header=None)
 

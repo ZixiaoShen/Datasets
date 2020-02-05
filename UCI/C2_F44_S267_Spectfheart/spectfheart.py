@@ -4,7 +4,8 @@ import requests
 
 
 def spectfheart():
-    file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/F44_Spectfheart/Spectfheart.csv"
+    file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/" \
+               "C2_F44_S267_Spectfheart/Spectfheart.csv"
     s = requests.get(file_url).content
     df = pd.read_csv(io.StringIO(s.decode('utf-8')), header=None)
 
