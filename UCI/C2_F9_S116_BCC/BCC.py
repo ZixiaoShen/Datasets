@@ -5,7 +5,7 @@ import requests
 
 def breast_cancer_coimbra():
     file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/" \
-                "BCC/dataR2.csv"
+                "C2_F9_S116_BCC/dataR2.csv"
     s = requests.get(file_url).content
     df = pd.read_csv(io.StringIO(s.decode('utf-8')))
 
