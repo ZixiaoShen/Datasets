@@ -5,7 +5,8 @@ import requests
 
 def absenteeism():
     file_url = \
-        "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/F21_Absenteeism/Absenteeism_at_work.csv"
+        "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/" \
+        "C19_F20_S740_Absenteeism/Absenteeism_at_work.csv"
     s = requests.get(file_url).content
     df = pd.read_csv(io.StringIO(s.decode('utf-8')), header=None)
     df = df.drop([0])

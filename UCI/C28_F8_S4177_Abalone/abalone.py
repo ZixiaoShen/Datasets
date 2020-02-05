@@ -5,8 +5,8 @@ import requests
 
 
 def abalone():
-    file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/F8_Abalone/abalone.data"
-
+    file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/" \
+               "C28_F8_S4177_Abalone/abalone.data"
     s = requests.get(file_url).content
     df = pd.read_csv(io.StringIO(s.decode('utf-8')), header=None)
     df_str = df[0]
