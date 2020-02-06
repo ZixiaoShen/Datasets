@@ -5,7 +5,7 @@ import requests
 
 # def breast_tissue():
 file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/" \
-            "Ecoli/ecoli.data"
+            "Ecoli/ecoli.csv"
 s = requests.get(file_url).content
 df = pd.read_csv(io.StringIO(s.decode('utf-8')), header=None)
     # data = df.values
