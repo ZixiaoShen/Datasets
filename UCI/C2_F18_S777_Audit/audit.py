@@ -1,6 +1,7 @@
 import pandas as pd
 import io
 import requests
+import numpy as np
 
 
 # def appendicitis():
@@ -8,11 +9,15 @@ file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/" \
            "C2_F18_S777_Audit/audit.csv"
 s = requests.get(file_url).content
 df = pd.read_csv(io.StringIO(s.decode('utf-8')))
+# data = df.replace(to_replace=" ", value=np.nan)
+data = df.dropna(how='any')
 
-x_df = df.drop(columns='Risk')
-y_df = df.iloc[:, -1]
+values = data.values
 
-x = x_df.values
+# x_df = df.drop(columns='Risk')
+# y_df = df.iloc[:, -1]
+
+# x = x_df.values
 # x = x.astype(float)
 # y = y_df.values
     # data = df.values
