@@ -5,10 +5,16 @@ import requests
 
 # def appendicitis():
 file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/" \
-           "C2_F18_S777_Audit/audit_risk.csv"
+           "C2_F18_S777_Audit/trial.csv"
 s = requests.get(file_url).content
-df = pd.read_csv(io.StringIO(s.decode('utf-8')), header=None)
+df = pd.read_csv(io.StringIO(s.decode('utf-8')))
 
+x_df = df.drop(columns='Risk')
+y_df = df.iloc[:, -1]
+
+x = x_df.values
+x = x.astype(float)
+y = y_df.values
     # data = df.values
     # x = data[:, 0:7]
     # x = x.astype('float')
