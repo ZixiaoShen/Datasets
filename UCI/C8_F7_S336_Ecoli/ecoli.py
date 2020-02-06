@@ -5,7 +5,7 @@ import requests
 
 def ecoli():
     file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/" \
-                "Ecoli/ecoli.csv"
+                "C8_F7_S336_Ecoli/ecoli.csv"
     s = requests.get(file_url).content
     df = pd.read_csv(io.StringIO(s.decode('utf-8')), header=None)
     df = df.drop(columns=0)
