@@ -3,23 +3,24 @@ import io
 import requests
 
 
-# def appendicitis():
-file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/" \
-            "HCV_Egy/HCV_Egy_Data.csv"
-s = requests.get(file_url).content
-df = pd.read_csv(io.StringIO(s.decode('utf-8')), header=None)
+def hcv_egy():
+    file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/" \
+                "HCV_Egy/HCV_Egy_Data.csv"
+    s = requests.get(file_url).content
+    df = pd.read_csv(io.StringIO(s.decode('utf-8')))
 
-    # data = df.values
-    # x = data[:, 0:7]
-    # x = x.astype('float')
-    # y = data[:, 7].astype('int')
-    # return x, y
+    x_df = df.iloc[:, 0: -1]
+    y_df = df.iloc[:, -1]
+
+    x = x_df.values
+    y = y_df.values
+    return x, y
 
 
-# if __name__ == '__main__':
-#     X, Y = appendicitis()
-#     n_samples, n_features = X.shape
-#     n_class = len(set(Y))
-#     print("Number of Samples:", n_samples)
-#     print("Number of Features:", n_features)
-#     print("Number of Classes:", n_class)
+if __name__ == '__main__':
+    X, Y = hcv_egy()
+    n_samples, n_features = X.shape
+    n_class = len(set(Y))
+    print("Number of Samples:", n_samples)
+    print("Number of Features:", n_features)
+    print("Number of Classes:", n_class)
