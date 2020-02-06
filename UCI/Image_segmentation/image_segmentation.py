@@ -5,7 +5,7 @@ import requests
 
 def image_segmentation():
     file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/" \
-                "Image_segmentation/Image_segmentation.csv"
+                "Image_segmentation/image_segmentation.csv"
     s = requests.get(file_url).content
     df = pd.read_csv(io.StringIO(s.decode('utf-8')), header=None)
 
