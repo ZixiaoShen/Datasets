@@ -1,12 +1,11 @@
 import pandas as pd
-import numpy as np
 import io
 import requests
 
 
 def ilpd():
     file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/" \
-                "ILPD/ILPD.csv"
+                "C2_F10_S583_ILPD/ILPD.csv"
     s = requests.get(file_url).content
     df = pd.read_csv(io.StringIO(s.decode('utf-8')), header=None)
 
