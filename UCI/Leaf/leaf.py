@@ -1,26 +1,25 @@
 import pandas as pd
+import numpy as np
 import io
 import requests
 
 
-def image_segmentation():
+def leaf():
     file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/" \
-                "Image_segmentation/image_segmentation.csv"
+               "Leaf/leaf.csv"
     s = requests.get(file_url).content
     df = pd.read_csv(io.StringIO(s.decode('utf-8')), header=None)
+    df = df.drop(columns=0)
+    x_df = df.drop(columns=10)
+    y_df = df[10]
 
-    x_df = df.drop(columns=0)
-    x = x_df.values
-    y_df = df.iloc[:, 0]
-
-    class_mapping = {'BRICKFACE': 0, 'SKY': 1, 'FOLIAGE': 2, 'CEMENT': 3,
-                     'WINDOW': 4, 'PATH': 5, 'GRASS': 6}
-    y = y_df.map(class_mapping).values
+    x = np.array(x_df)
+    y = np.array(y_df)
     return x, y
 
 
 if __name__ == '__main__':
-    X, Y = image_segmentation()
+    X, Y = leaf()
     n_samples, n_features = X.shape
     n_class = len(set(Y))
     print("Number of Samples:", n_samples)
