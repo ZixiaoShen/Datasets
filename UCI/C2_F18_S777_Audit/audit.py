@@ -13,8 +13,8 @@ x_df = df.drop(columns='Risk')
 y_df = df.iloc[:, -1]
 
 x = x_df.values
-x = x.astype(float)
-y = y_df.values
+# x = x.astype(float)
+# y = y_df.values
     # data = df.values
     # x = data[:, 0:7]
     # x = x.astype('float')
