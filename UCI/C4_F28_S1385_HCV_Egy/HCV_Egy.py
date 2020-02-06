@@ -5,7 +5,7 @@ import requests
 
 def hcv_egy():
     file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/" \
-                "HCV_Egy/HCV_Egy_Data.csv"
+                "C4_F28_S1385_HCV_Egy/HCV_Egy_Data.csv"
     s = requests.get(file_url).content
     df = pd.read_csv(io.StringIO(s.decode('utf-8')))
 
