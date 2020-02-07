@@ -6,7 +6,7 @@ import numpy as np
 
 def mammographic():
     file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/" \
-                "Mammographic/mammographic.csv"
+                "C2_F5_S830_Mammographic/mammographic.csv"
     s = requests.get(file_url).content
     df = pd.read_csv(io.StringIO(s.decode('utf-8')), header=None)
 
