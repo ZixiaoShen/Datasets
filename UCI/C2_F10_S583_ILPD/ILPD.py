@@ -10,6 +10,7 @@ def ilpd():
     df = pd.read_csv(io.StringIO(s.decode('utf-8')), header=None)
 
     y = df.iloc[:, -1].values
+    y = y - 1
     x_df = df.iloc[:, 0:-1]
 
     df_str = x_df.iloc[:, 1]
