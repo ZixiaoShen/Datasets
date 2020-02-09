@@ -5,7 +5,7 @@ import requests
 
 def sports_articles():
     file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/" \
-               "Sports_articles/sports_articles.csv"
+               "C2_F59_S1000_Sports_articles/sports_articles.csv"
     s = requests.get(file_url).content
     df = pd.read_csv(io.StringIO(s.decode('utf-8')))
     x_df = df.drop(columns='Label')
