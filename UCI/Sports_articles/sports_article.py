@@ -5,14 +5,15 @@ import requests
 
 def sports_article():
     file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/" \
-                "C30_F15_S340_Leaf/leaf.csv"
+               "Sports_articles/sports_articles.csv"
     s = requests.get(file_url).content
     df = pd.read_csv(io.StringIO(s.decode('utf-8')))
-    x_df = df.drop(columns=0)
-    y_df = df.iloc[:, 0]
-
+    x_df = df.drop(columns='Label')
     x = x_df.values
-    y = y_df.values
+
+    y_df = df.iloc[:, 0]
+    class_mapping = {'objective': 0, 'subjective': 1}
+    y = y_df.map(class_mapping).values
     return x, y
 
 
