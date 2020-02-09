@@ -5,7 +5,7 @@ import requests
 
 def cmsc():
     file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/" \
-               "CMSC/cmsc.csv"
+               "C2_F18_S540_CMSC/cmsc.csv"
     s = requests.get(file_url).content
     df = pd.read_csv(io.StringIO(s.decode('utf-8')))
 
