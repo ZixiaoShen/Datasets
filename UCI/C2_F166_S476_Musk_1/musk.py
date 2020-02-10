@@ -5,7 +5,7 @@ import requests
 
 def musk():
     file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/" \
-               "Musk/clean1.csv"
+               "C2_F166_S476_Musk_1/clean1.csv"
     s = requests.get(file_url).content
     df = pd.read_csv(io.StringIO(s.decode('utf-8')), header=None)
 
