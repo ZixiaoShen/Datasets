@@ -4,10 +4,10 @@ import requests
 
 
 # def divorce():
-    file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/" \
-                "C2_F54_S170_Divorce/divorce.csv"
-    s = requests.get(file_url).content
-    df = pd.read_csv(io.StringIO(s.decode('utf-8')))
+file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/" \
+           "LSVT/lsvt.csv"
+s = requests.get(file_url).content
+df = pd.read_csv(io.StringIO(s.decode('utf-8')))
 
     # x_df = df.drop(columns='Class')
     # y_df = df.iloc[:, -1]
