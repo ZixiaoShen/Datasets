@@ -3,7 +3,7 @@ import io
 import requests
 
 
-def musk():
+def musk_1():
     file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/" \
                "C2_F166_S476_Musk_1/clean1.csv"
     s = requests.get(file_url).content
@@ -18,7 +18,7 @@ def musk():
 
 
 if __name__ == '__main__':
-    X, Y = musk()
+    X, Y = musk_1()
     n_samples, n_features = X.shape
     n_class = len(set(Y))
     print("Number of Samples:", n_samples)
