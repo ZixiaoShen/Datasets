@@ -1,23 +1,24 @@
 import pandas as pd
-import numpy as np
 import io
 import requests
 
 
-def pima():
+def divorce():
     file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/" \
-               "C2_F8_S768_PIMA/pima-indians-diabetes.data"
+                "C2_F54_S170_Divorce/divorce.csv"
     s = requests.get(file_url).content
-    df = pd.read_csv(io.StringIO(s.decode('utf-8')), header=None)
-    df.columns = ['No_pregnant', 'Plasma_glucose', 'Blood_pres',
-                  'Skin_thick', 'Serum_insu', 'BMI', 'Diabetes_func', 'Age', 'Class']
-    x = np.array(df.drop(['Class'], axis=1))
-    y = np.array(df['Class'])
+    df = pd.read_csv(io.StringIO(s.decode('utf-8')))
+
+    x_df = df.drop(columns='Class')
+    y_df = df.iloc[:, -1]
+
+    x = x_df.values
+    y = y_df.values
     return x, y
 
 
 if __name__ == '__main__':
-    X, Y = pima()
+    X, Y = divorce()
     n_samples, n_features = X.shape
     n_class = len(set(Y))
     print("Number of Samples:", n_samples)
