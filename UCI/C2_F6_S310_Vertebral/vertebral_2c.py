@@ -5,7 +5,7 @@ import requests
 
 def vertebral_2c():
     file_url = "https://raw.githubusercontent.com/ZixiaoShen/Datasets/master/UCI/" \
-               "C2_F6_S310_Vertebral_2C/Vertebral_2C.csv"
+               "C2_F6_S310_Vertebral/Vertebral_2C.csv"
     s = requests.get(file_url).content
     df = pd.read_csv(io.StringIO(s.decode('utf-8')), header=None)
 
